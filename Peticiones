@@ -1,0 +1,34 @@
+const express = require ('express')
+const app = espress()
+const port = 3000
+app.set('view engine','ejs')
+app.set('views', __dirname + '/views')
+
+app.use(express.static(__dirname + "/Public"))
+
+app.get('/',(req,res)=>{
+    res.render('index',{
+        titulo : "Curriculum Vitae"
+
+    })
+})
+
+
+app.get('/contactanos',(req,res)=>{
+    res.render('ESTAMOS EN CONTACTANOS',{
+      tituloP :"Biblioteca-ML",
+      titulo : "Página de Contactanos"
+
+    })
+    })
+
+    app.get('/contactanos',(req,res)=>{
+        res.send('Estamos en contactanos')
+    })
+
+ /*app.use(express.static(__dirname + "/Public"))
+ }) */
+
+app.listen(port,()=>{
+    console.log ('puerto 3000', port)
+})
